@@ -8,12 +8,16 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 
 const divContainer = document.querySelector(".container");
 
-let cella_griglia = `<div class="cella"></div>`;
+let cella_griglia = document.querySelector(".cella");
 let domandaUtente = parseInt(prompt("scegli un livello di difficoltà, digita 1, 2 o 3"));
 /* verifico che l'utente inserisca 1 o 2 o 3 */
 
 if (domandaUtente == 1) {
     celle_livello_uno();
+
+    document.querySelector(".cella").addEventListener("click", function() {
+        this.className += "red"; 
+    });
 }
 else if (domandaUtente == 2) {
     celle_livello_due();
@@ -42,10 +46,11 @@ else {
 
 
 
+
 /* funzione che mi richiama 100 celle (liv. 1) */
 function celle_livello_uno () {
     for (let i = 0; i < 100; i++) {
-        const element = cella_griglia;
+        const element = `<div class="cella"></div>`;
 
         divContainer.innerHTML += element;
     }
@@ -55,7 +60,7 @@ function celle_livello_uno () {
 /* funzione che mi richiama 81 celle (liv. 2) */
 function celle_livello_due () {
     for (let i = 0; i < 81; i++) {
-        const element = cella_griglia;
+        const element = `<div class="cella"></div>`;
 
         divContainer.innerHTML += element;
     }
@@ -65,7 +70,7 @@ function celle_livello_due () {
 /* funzione che mi richiama 49 celle (liv. 3) */
 function celle_livello_tre () {
     for (let i = 0; i < 49; i++) {
-        const element = cella_griglia;
+        const element = `<div class="cella"></div>`;
 
         divContainer.innerHTML += element;
     }
