@@ -8,9 +8,15 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 
 const divContainer = document.querySelector(".container");
 
-let domandaUtente = parseInt(prompt("scegli un livello di difficoltà, digita 1, 2 o 3"));
+let domandaUtente;
 /* verifico che l'utente inserisca 1 o 2 o 3 */
 let numero_celle = 0;
+
+do {
+
+    domandaUtente = parseInt(prompt("scegli un livello di difficoltà, digita 1, 2 o 3"));
+
+} while (!verificaUtente())
 
 if (domandaUtente == 1) {
     numero_celle = 100;
@@ -27,9 +33,6 @@ else if (domandaUtente == 3) {
     numero_celle = 49;
     divContainer.style.width = "700px";
     creazione_celle(numero_celle);
-}
-else {
-    alert("non hai digitato correttamente il numero");
 }
 
 /* cella_griglia.addEventListener("click", function() {
@@ -73,4 +76,15 @@ function creazione_celle (numero) {
 
 }
 
+/* funzione verifica domanda utente */
+
+function verificaUtente () {
+    if (domandaUtente == 1 || domandaUtente == 2 || domandaUtente == 3) {
+        return true
+    } 
+    else {
+        alert("non hai inserito correttamente il numero..");
+        return false 
+    }
+}
 
