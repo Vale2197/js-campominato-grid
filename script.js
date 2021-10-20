@@ -14,16 +14,18 @@ let numero_celle = 0;
 
 if (domandaUtente == 1) {
     numero_celle = 100;
-
+    divContainer.style.width = "1000px";
     creazione_celle(numero_celle);
 
 }
 else if (domandaUtente == 2) {
     numero_celle = 81;
+    divContainer.style.width = "900px";
     creazione_celle(numero_celle);
 }
 else if (domandaUtente == 3) {
     numero_celle = 49;
+    divContainer.style.width = "700px";
     creazione_celle(numero_celle);
 }
 else {
@@ -42,8 +44,8 @@ console.log(cella_griglia);
 for (let i = 0; i < cella_griglia.length; i++) {
     const element = cella_griglia[i];
 
-    element.addEventListener("click", function () {
-        element.classList.add("red");
+        element.addEventListener("click", function () {
+        element.classList.add("blue");
     })
 }
 
