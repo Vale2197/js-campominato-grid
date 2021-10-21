@@ -36,8 +36,7 @@ else if (domandaUtente == 3) {
 }
 
 /* cella_griglia.addEventListener("click", function() {
-    cella_griglia.classList.add("red");
-   
+    cella_griglia.classList.add("red");  
 }); */
 
 
@@ -45,10 +44,10 @@ let cella_griglia = document.querySelectorAll(".cella");
 console.log(cella_griglia);
 
 for (let i = 0; i < cella_griglia.length; i++) {
-    const element = cella_griglia[i];
+    const cella_singola = cella_griglia[i];
 
-        element.addEventListener("click", function () {
-        element.classList.add("blue");
+        cella_singola.addEventListener("click", function () {
+        cella_singola.classList.add("blue");
     })
 }
 
@@ -65,11 +64,10 @@ for (let i = 0; i < cella_griglia.length; i++) {
 
 
 
-
 /* funzione che mi richiama n celle  */
 function creazione_celle (numero) {
-    for (let i = 0; i < numero; i++) {
-        const element = `<div class="cella"></div>`;
+    for (let i = 1; i <= numero; i++) {
+        const element = `<div class="cella">${i}</div>`;
 
         divContainer.innerHTML += element;
     }
